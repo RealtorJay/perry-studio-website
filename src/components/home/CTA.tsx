@@ -20,21 +20,15 @@ export default function CTA() {
 
         <FadeIn delay={0.1}>
           <p className="mt-6 md:mt-8 text-[19px] md:text-[21px] text-[#888] leading-relaxed max-w-xl mx-auto">
-            A free walkthrough for DFW commercial buildings 25,000 sqft and up.
-            No cost, no commitment — just answers.
+            Free 30-minute review for commercial buildings 25,000 sqft and up.
+            No cost, no commitment, no sales pitch.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="btn-gold">
-              Schedule Your Walkthrough
-            </Link>
-            <Link
-              href="/incentives"
-              className="text-[15px] font-semibold text-[#666] hover:text-white transition-colors"
-            >
-              See Tax Incentives →
+            <Link href="/#lead-form" className="btn-gold">
+              Book my free review
             </Link>
           </div>
         </FadeIn>

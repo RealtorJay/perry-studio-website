@@ -9,20 +9,20 @@ const stats = [
     value: 40,
     prefix: "$",
     suffix: "K",
-    label: "wasted per building annually",
+    label: "lost to controls drift per building per year (industry avg)",
     displayPrefix: "$20K–$",
   },
   {
     value: 80,
     prefix: "",
     suffix: "%",
-    label: "of buildings have drifted controls",
+    label: "of commercial buildings run sequences that have drifted from design",
   },
   {
     value: 6,
     prefix: "",
     suffix: " mo",
-    label: "typical payback period",
+    label: "typical payback on retro-commissioning work",
     displayPrefix: "3–",
   },
 ];
