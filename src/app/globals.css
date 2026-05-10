@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ps-black: #1D1D1F;
+  --color-ps-gray: #86868B;
+  --color-ps-light: #F5F5F7;
+  --color-ps-border: #D2D2D7;
+  --color-ps-gold: #1D1D1F;
+  --color-ps-subtle: #FAFAFA;
+  --color-ps-warm: #F8F6F3;
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1D1D1F;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: #1D1D1F;
+  color: #F5F5F7;
+}
+
+/* Primary CTA buttons — lift and shadow on hover */
+.btn-gold {
+  display: inline-block;
+  background: var(--color-ps-black);
+  color: white;
+  border-radius: 9999px;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark section CTA — inverted (white button on dark bg) */
+section.bg-ps-black .btn-gold,
+section.bg-\\[\\#0a0a0f\\] .btn-gold {
+  background: white;
+  color: var(--color-ps-black);
+}
+
+section.bg-ps-black .btn-gold:hover,
+section.bg-\\[\\#0a0a0f\\] .btn-gold:hover {
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.15);
+}
+
+/* Text links — animated underline */
+.link-gold {
+  color: var(--color-ps-black);
+  font-weight: 600;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.link-gold::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-ps-black);
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.link-gold:hover::after {
+  width: 100%;
 }
